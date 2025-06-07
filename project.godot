@@ -11,5 +11,10 @@ config_version=5
 [application]
 
 config/name="GAMEJAM"
+run/main_scene="uid://bbjtce3afnpmv"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+global="*res://global.gd"

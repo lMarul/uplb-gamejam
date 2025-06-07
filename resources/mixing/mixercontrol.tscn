@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://cscwbttw746x1"]
+
+[ext_resource type="Script" uid="uid://nvktkll2sfwe" path="res://potionmixing.gd" id="1_hsbcm"]
+[ext_resource type="PackedScene" uid="uid://bb75yjfiuehmq" path="res://resources/mixing/mixer.tscn" id="2_of3wd"]
+
+[node name="mixercontrol" type="Control"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 64.0
+offset_bottom = 64.0
+script = ExtResource("1_hsbcm")
+
+[node name="mixer" parent="." instance=ExtResource("2_of3wd")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+
+[node name="ResultLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(70, 20)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = 89.0
+offset_right = 70.0
+offset_bottom = 120.0
+grow_vertical = 2
+text = "Mix!"
+
+[connection signal="ingredient_dropped" from="mixer" to="." method="_on_mixer_ingredient_dropped"]
+[connection signal="mixing_successful" from="mixer" to="." method="_on_mixer_mixing_successful"]
+[connection signal="mixing_unsuccessful" from="mixer" to="." method="_on_mixer_mixing_unsuccessful"]

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="IngredientData" load_steps=4 format=3 uid="uid://b4qhnvmij3g5s"]
+
+[ext_resource type="Script" uid="uid://ckwlw7x3vgbe3" path="res://resources/ingredients/ingredient_resources.gd" id="1_hbplk"]
+
+[sub_resource type="Gradient" id="Gradient_hbplk"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0.435294, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ys4f8"]
+gradient = SubResource("Gradient_hbplk")
+
+[resource]
+script = ExtResource("1_hbplk")
+name = "Ingredient 3"
+type = "base"
+properties = {}
+explosive_chance = 0.0
+icon = SubResource("GradientTexture2D_ys4f8")

@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://bbjtce3afnpmv"]
+
+[ext_resource type="PackedScene" uid="uid://btwjfny610ipm" path="res://resources/ingredients/ingredient.tscn" id="1_txeo6"]
+[ext_resource type="Resource" uid="uid://cho1g4csgf3y3" path="res://resources/ingredients/healing2.tres" id="3_lxvwt"]
+[ext_resource type="Resource" uid="uid://b4qhnvmij3g5s" path="res://resources/ingredients/healing3.tres" id="4_01wc5"]
+[ext_resource type="Resource" uid="uid://c5xpcnvl17ve6" path="res://resources/ingredients/healing4.tres" id="5_67bdf"]
+[ext_resource type="PackedScene" uid="uid://cscwbttw746x1" path="res://resources/mixing/mixercontrol.tscn" id="5_ytwy5"]
+
+[node name="Potionmixing" type="Node2D"]
+
+[node name="ingredient1" parent="." instance=ExtResource("1_txeo6")]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 49.0
+offset_top = 44.0
+offset_right = 113.0
+offset_bottom = 108.0
+
+[node name="ingredient2" parent="." instance=ExtResource("1_txeo6")]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 49.0
+offset_top = 123.0
+offset_right = 113.0
+offset_bottom = 187.0
+ingredient_data = ExtResource("3_lxvwt")
+
+[node name="ingredient3" parent="." instance=ExtResource("1_txeo6")]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 125.0
+offset_top = 44.0
+offset_right = 189.0
+offset_bottom = 108.0
+ingredient_data = ExtResource("4_01wc5")
+
+[node name="ingredient4" parent="." instance=ExtResource("1_txeo6")]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 125.0
+offset_top = 123.0
+offset_right = 189.0
+offset_bottom = 187.0
+ingredient_data = ExtResource("5_67bdf")
+
+[node name="mixercontrol" parent="." instance=ExtResource("5_ytwy5")]
+offset_left = 228.0
+offset_top = 46.0
+offset_right = 356.0
+offset_bottom = 174.0
