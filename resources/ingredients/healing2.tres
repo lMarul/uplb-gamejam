@@ -1,14 +1,8 @@
-[gd_resource type="Resource" script_class="IngredientData" load_steps=5 format=3 uid="uid://cho1g4csgf3y3"]
+[gd_resource type="Resource" script_class="IngredientData" load_steps=4 format=3 uid="uid://cho1g4csgf3y3"]
 
 [ext_resource type="Script" uid="uid://ckwlw7x3vgbe3" path="res://resources/ingredients/ingredient_resources.gd" id="1_opjeh"]
+[ext_resource type="Texture2D" uid="uid://bnhq6e3w6t8fg" path="res://resources/potionmaking/TawaTawa.png" id="1_vffd8"]
 [ext_resource type="AudioStream" uid="uid://7e25ilwrfa8p" path="res://resources/ingredients/sounds/PlaceIngredientDry.mp3" id="2_djq3t"]
-
-[sub_resource type="Gradient" id="Gradient_opjeh"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0, 0.411765, 0.0666667, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_djq3t"]
-gradient = SubResource("Gradient_opjeh")
 
 [resource]
 script = ExtResource("1_opjeh")
@@ -16,5 +10,5 @@ name = "Ingredient 2"
 type = "base"
 properties = {}
 explosive_chance = 0.0
-icon = SubResource("GradientTexture2D_djq3t")
+icon = ExtResource("1_vffd8")
 sound_effect = ExtResource("2_djq3t")

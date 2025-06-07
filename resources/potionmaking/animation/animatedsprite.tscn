@@ -1,0 +1,74 @@
+[gd_scene load_steps=7 format=4 uid="uid://004ysxc1gr8b"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_d3n6s"]
+_data = PackedByteArray("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")
+size_override = Vector2(1320, 980)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqtok"]
+atlas = SubResource("PortableCompressedTexture2D_d3n6s")
+region = Rect2(660, 0, 660, 490)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ija42"]
+atlas = SubResource("PortableCompressedTexture2D_d3n6s")
+region = Rect2(660, 490, 660, 490)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvybd"]
+atlas = SubResource("PortableCompressedTexture2D_d3n6s")
+region = Rect2(0, 0, 660, 490)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjo2u"]
+atlas = SubResource("PortableCompressedTexture2D_d3n6s")
+region = Rect2(0, 490, 660, 490)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pkgku"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqtok")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ija42")
+}],
+"loop": true,
+"name": &"left_to_right",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 0.9,
+"texture": SubResource("AtlasTexture_gvybd")
+}, {
+"duration": 0.9,
+"texture": SubResource("AtlasTexture_mjo2u")
+}],
+"loop": true,
+"name": &"up_and_down",
+"speed": 4.0
+}]
+
+[node name="mixinganim" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_pkgku")
+animation = &"left_to_right"
+frame_progress = 0.000845406
+metadata/_aseprite_wizard_interface_config_ = {
+"animation_section": true,
+"layer_section": true,
+"output_section": true,
+"pending_changes": {},
+"slice_section": true
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"should_round_fps": true,
+"slice": "",
+"source": "res://resources/potionmaking/animation/Mixing.ase",
+"source_uid": 3436959595741451271
+}
+metadata/_aseprite_wizard_source_file_hash_ = "70b32ff495cb26592f0d60713c5ea309"

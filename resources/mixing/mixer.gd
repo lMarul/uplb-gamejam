@@ -1,10 +1,11 @@
 extends TextureRect
 var added_ingredients: Array = []
+var flag = false
 
 signal ingredient_dropped(ingredient_data)
 signal ingredient_to_null()
-signal mixing_successful()
-signal mixing_unsuccessful()
+signal mixing_successful(flag)
+signal mixing_unsuccessful(flag)
 
 func _can_drop_data(_pos, data):
 	return data is IngredientData
@@ -30,16 +31,6 @@ func process_potion(data):
 			types[ingredient.type] = true
 
 	if types["base"] and types["booster"] and types["stabilizer"]:
-		emit_signal("mixing_successful")
+		emit_signal("mixing_successful", true)
 	else:
-		emit_signal("mixing_unsuccessful")
-
-
-func _on_stirring_mixleft_pressed() -> void:
-	$ProgressBar.value += 0.1
-
-func _on_stirring_mixright_pressed() -> void:
-	$ProgressBar.value -= 0.1
-
-func _on_stirring_mixup_pressed() -> void:
-	$ProgressBar.value += 0.1
+		emit_signal("mixing_unsuccessful", false)

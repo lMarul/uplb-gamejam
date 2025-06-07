@@ -1,13 +1,15 @@
 extends Button
 
-signal start_mix(mix_flag)
+signal start_mix()
+var flag = null
 
-func _on_mixer_mixing_successful() -> void:
-	disabled = false
-	var mix_flag = true
-	emit_signal("start_mix", mix_flag)
+func _pressed():
+	emit_signal("start_mix", flag)
 
-func _on_mixer_mixing_unsuccessful() -> void:
+func _on_mixer_mixing_successful(flag: Variant) -> void:
 	disabled = false
-	var mix_flag = false
-	emit_signal("start_mix", mix_flag)
+	flag = true
+	
+func _on_mixer_mixing_unsuccessful(flag: Variant) -> void:
+	disabled = false
+	flag = false

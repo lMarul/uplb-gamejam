@@ -1,13 +1,12 @@
 # ingredient.gd
-extends TextureRect
+extends Control
 
 @export var ingredient_data: IngredientData
 
-func _get_drag_data(_at_position: Vector2) -> Variant:
-	var preview = TextureRect.new()
-	preview.texture = ingredient_data.icon
-	set_drag_preview(preview)
+func _get_drag_data(_pos: Vector2) -> Variant:
+	var preview = duplicate()
+	var c = Control.new()
+	c.add_child(preview)
+	preview.position = Vector2.ZERO - _pos
+	set_drag_preview(c)
 	return ingredient_data
-	
-func _ready():
-	$Label.text = ingredient_data.name

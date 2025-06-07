@@ -1,175 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://bb75yjfiuehmq"]
+[gd_scene load_steps=2 format=3 uid="uid://bb75yjfiuehmq"]
 
 [ext_resource type="Script" uid="uid://cb88ho5yqlxwk" path="res://resources/mixing/mixer.gd" id="1_mo24j"]
-[ext_resource type="Script" uid="uid://n68ld6uq0bcm" path="res://resources/mixing/mixbutton.gd" id="2_y3g7b"]
-
-[sub_resource type="Gradient" id="Gradient_mo24j"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_y3g7b"]
-gradient = SubResource("Gradient_mo24j")
-
-[sub_resource type="FontFile" id="FontFile_mo24j"]
-subpixel_positioning = 0
-msdf_pixel_range = 14
-msdf_size = 128
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/17/0/ascent = 0.0
-cache/0/17/0/descent = 0.0
-cache/0/17/0/underline_position = 0.0
-cache/0/17/0/underline_thickness = 0.0
-cache/0/17/0/scale = 1.0
-cache/0/18/0/ascent = 0.0
-cache/0/18/0/descent = 0.0
-cache/0/18/0/underline_position = 0.0
-cache/0/18/0/underline_thickness = 0.0
-cache/0/18/0/scale = 1.0
-cache/0/19/0/ascent = 0.0
-cache/0/19/0/descent = 0.0
-cache/0/19/0/underline_position = 0.0
-cache/0/19/0/underline_thickness = 0.0
-cache/0/19/0/scale = 1.0
-cache/0/20/0/ascent = 0.0
-cache/0/20/0/descent = 0.0
-cache/0/20/0/underline_position = 0.0
-cache/0/20/0/underline_thickness = 0.0
-cache/0/20/0/scale = 1.0
-cache/0/21/0/ascent = 0.0
-cache/0/21/0/descent = 0.0
-cache/0/21/0/underline_position = 0.0
-cache/0/21/0/underline_thickness = 0.0
-cache/0/21/0/scale = 1.0
-cache/0/22/0/ascent = 0.0
-cache/0/22/0/descent = 0.0
-cache/0/22/0/underline_position = 0.0
-cache/0/22/0/underline_thickness = 0.0
-cache/0/22/0/scale = 1.0
-cache/0/23/0/ascent = 0.0
-cache/0/23/0/descent = 0.0
-cache/0/23/0/underline_position = 0.0
-cache/0/23/0/underline_thickness = 0.0
-cache/0/23/0/scale = 1.0
-cache/0/24/0/ascent = 0.0
-cache/0/24/0/descent = 0.0
-cache/0/24/0/underline_position = 0.0
-cache/0/24/0/underline_thickness = 0.0
-cache/0/24/0/scale = 1.0
-cache/0/25/0/ascent = 0.0
-cache/0/25/0/descent = 0.0
-cache/0/25/0/underline_position = 0.0
-cache/0/25/0/underline_thickness = 0.0
-cache/0/25/0/scale = 1.0
-cache/0/26/0/ascent = 0.0
-cache/0/26/0/descent = 0.0
-cache/0/26/0/underline_position = 0.0
-cache/0/26/0/underline_thickness = 0.0
-cache/0/26/0/scale = 1.0
-cache/0/27/0/ascent = 0.0
-cache/0/27/0/descent = 0.0
-cache/0/27/0/underline_position = 0.0
-cache/0/27/0/underline_thickness = 0.0
-cache/0/27/0/scale = 1.0
-cache/0/9/0/ascent = 0.0
-cache/0/9/0/descent = 0.0
-cache/0/9/0/underline_position = 0.0
-cache/0/9/0/underline_thickness = 0.0
-cache/0/9/0/scale = 1.0
-
-[sub_resource type="LabelSettings" id="LabelSettings_y3g7b"]
-font = SubResource("FontFile_mo24j")
 
 [node name="mixer" type="TextureRect"]
 custom_minimum_size = Vector2(128, 128)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -1024.0
+offset_left = 1.0
+offset_right = -991.0
 offset_bottom = -520.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_force_pass_scroll_events = false
 mouse_default_cursor_shape = 2
-texture = SubResource("GradientTexture2D_y3g7b")
 script = ExtResource("1_mo24j")
-
-[node name="Panel" type="Panel" parent="."]
-show_behind_parent = true
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "Mortar & 
-Pestle"
-label_settings = SubResource("LabelSettings_y3g7b")
-
-[node name="mixbutton" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 0.880005
-offset_bottom = 31.88
-grow_horizontal = 2
-grow_vertical = 0
-disabled = true
-text = "Mix!"
-script = ExtResource("2_y3g7b")
-
-[node name="ProgressBar" type="ProgressBar" parent="."]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 164.059
-offset_top = -64.0
-offset_right = 164.059
-offset_bottom = -37.0
-grow_horizontal = 2
-grow_vertical = 2
-rotation = 1.57126
-fill_mode = 1
-show_percentage = false
-
-[node name="ProgressBar2" type="ProgressBar" parent="."]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 194.059
-offset_top = -64.0
-offset_right = 194.059
-offset_bottom = -37.0
-grow_horizontal = 2
-grow_vertical = 2
-rotation = 1.57126
-fill_mode = 1
-show_percentage = false
-
-[connection signal="mixing_successful" from="." to="mixbutton" method="_on_mixer_mixing_successful"]
-[connection signal="mixing_unsuccessful" from="." to="mixbutton" method="_on_mixer_mixing_unsuccessful"]

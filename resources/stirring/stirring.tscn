@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ct7ujtcypcufs"]
+[gd_scene load_steps=4 format=3 uid="uid://ct7ujtcypcufs"]
 
 [ext_resource type="Script" uid="uid://bimoghan7id3s" path="res://resources/stirring/stirring.gd" id="1_jry5k"]
 [ext_resource type="Texture2D" uid="uid://b7sf4cmiowegi" path="res://icon.svg" id="1_n4upx"]
+[ext_resource type="PackedScene" uid="uid://004ysxc1gr8b" path="res://resources/potionmaking/animation/animatedsprite.tscn" id="3_yqgmy"]
 
 [node name="stirring" type="Control"]
 custom_minimum_size = Vector2(400, 256)
@@ -51,3 +52,5 @@ offset_top = -128.0
 grow_horizontal = 0
 grow_vertical = 0
 texture = ExtResource("1_n4upx")
+
+[node name="Animatedsprite" parent="." instance=ExtResource("3_yqgmy")]
