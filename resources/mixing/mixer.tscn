@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bb75yjfiuehmq"]
+[gd_scene load_steps=7 format=3 uid="uid://bb75yjfiuehmq"]
 
-[ext_resource type="Script" uid="uid://cb88ho5yqlxwk" path="res://resources/mixing/mixer1.gd" id="1_mo24j"]
+[ext_resource type="Script" uid="uid://cb88ho5yqlxwk" path="res://resources/mixing/mixer.gd" id="1_mo24j"]
+[ext_resource type="Script" uid="uid://n68ld6uq0bcm" path="res://resources/mixing/mixbutton.gd" id="2_y3g7b"]
 
 [sub_resource type="Gradient" id="Gradient_mo24j"]
 offsets = PackedFloat32Array(0)
@@ -10,6 +11,9 @@ colors = PackedColorArray(0, 0, 0, 1)
 gradient = SubResource("Gradient_mo24j")
 
 [sub_resource type="FontFile" id="FontFile_mo24j"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -120,3 +124,52 @@ grow_vertical = 2
 text = "Mortar & 
 Pestle"
 label_settings = SubResource("LabelSettings_y3g7b")
+
+[node name="mixbutton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.880005
+offset_bottom = 31.88
+grow_horizontal = 2
+grow_vertical = 0
+disabled = true
+text = "Mix!"
+script = ExtResource("2_y3g7b")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 164.059
+offset_top = -64.0
+offset_right = 164.059
+offset_bottom = -37.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.57126
+fill_mode = 1
+show_percentage = false
+
+[node name="ProgressBar2" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 194.059
+offset_top = -64.0
+offset_right = 194.059
+offset_bottom = -37.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.57126
+fill_mode = 1
+show_percentage = false
+
+[connection signal="mixing_successful" from="." to="mixbutton" method="_on_mixer_mixing_successful"]
+[connection signal="mixing_unsuccessful" from="." to="mixbutton" method="_on_mixer_mixing_unsuccessful"]

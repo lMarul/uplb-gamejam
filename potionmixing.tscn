@@ -1,46 +1,100 @@
-[gd_scene load_steps=6 format=3 uid="uid://bbjtce3afnpmv"]
+[gd_scene load_steps=9 format=3 uid="uid://bbjtce3afnpmv"]
 
+[ext_resource type="Script" uid="uid://cawy3mu51wu87" path="res://ingredient_list.gd" id="1_67bdf"]
 [ext_resource type="PackedScene" uid="uid://btwjfny610ipm" path="res://resources/ingredients/ingredient.tscn" id="1_txeo6"]
 [ext_resource type="Resource" uid="uid://cho1g4csgf3y3" path="res://resources/ingredients/healing2.tres" id="3_lxvwt"]
 [ext_resource type="Resource" uid="uid://b4qhnvmij3g5s" path="res://resources/ingredients/healing3.tres" id="4_01wc5"]
+[ext_resource type="Resource" uid="uid://lu065hl03m12" path="res://resources/ingredients/healing5.tres" id="5_01wc5"]
 [ext_resource type="Resource" uid="uid://c5xpcnvl17ve6" path="res://resources/ingredients/healing4.tres" id="5_67bdf"]
 [ext_resource type="PackedScene" uid="uid://cscwbttw746x1" path="res://resources/mixing/mixercontrol.tscn" id="5_ytwy5"]
+[ext_resource type="Resource" uid="uid://cigkqapgg83ur" path="res://resources/ingredients/healing6.tres" id="6_67bdf"]
 
 [node name="Potionmixing" type="Node2D"]
 
-[node name="ingredient1" parent="." instance=ExtResource("1_txeo6")]
-custom_minimum_size = Vector2(40, 40)
-offset_left = 49.0
-offset_top = 44.0
-offset_right = 113.0
-offset_bottom = 108.0
+[node name="ingredient_list" type="Control" parent="."]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 300.0
+offset_bottom = 200.0
+script = ExtResource("1_67bdf")
+metadata/_edit_use_anchors_ = true
 
-[node name="ingredient2" parent="." instance=ExtResource("1_txeo6")]
-custom_minimum_size = Vector2(40, 40)
-offset_left = 49.0
-offset_top = 123.0
-offset_right = 113.0
-offset_bottom = 187.0
+[node name="ingredient1" parent="ingredient_list" instance=ExtResource("1_txeo6")]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 1
+offset_right = 92.0
+offset_bottom = 92.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ingredient2" parent="ingredient_list" instance=ExtResource("1_txeo6")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -46.0
+offset_right = 46.0
+offset_bottom = 92.0
+grow_horizontal = 2
 ingredient_data = ExtResource("3_lxvwt")
+metadata/_edit_use_anchors_ = true
 
-[node name="ingredient3" parent="." instance=ExtResource("1_txeo6")]
-custom_minimum_size = Vector2(40, 40)
-offset_left = 125.0
-offset_top = 44.0
-offset_right = 189.0
-offset_bottom = 108.0
+[node name="ingredient3" parent="ingredient_list" instance=ExtResource("1_txeo6")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -92.0
+offset_bottom = 92.0
+grow_horizontal = 0
 ingredient_data = ExtResource("4_01wc5")
+metadata/_edit_use_anchors_ = true
 
-[node name="ingredient4" parent="." instance=ExtResource("1_txeo6")]
-custom_minimum_size = Vector2(40, 40)
-offset_left = 125.0
-offset_top = 123.0
-offset_right = 189.0
-offset_bottom = 187.0
+[node name="ingredient4" parent="ingredient_list" instance=ExtResource("1_txeo6")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -92.0
+offset_right = 92.0
+grow_vertical = 0
 ingredient_data = ExtResource("5_67bdf")
+metadata/_edit_use_anchors_ = true
+
+[node name="ingredient5" parent="ingredient_list" instance=ExtResource("1_txeo6")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -46.0
+offset_top = -92.0
+offset_right = 46.0
+grow_horizontal = 2
+grow_vertical = 0
+ingredient_data = ExtResource("5_01wc5")
+metadata/_edit_use_anchors_ = true
+
+[node name="ingredient6" parent="ingredient_list" instance=ExtResource("1_txeo6")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -92.0
+offset_top = -92.0
+grow_horizontal = 0
+grow_vertical = 0
+ingredient_data = ExtResource("6_67bdf")
+metadata/_edit_use_anchors_ = true
 
 [node name="mixercontrol" parent="." instance=ExtResource("5_ytwy5")]
-offset_left = 228.0
-offset_top = 46.0
-offset_right = 356.0
-offset_bottom = 174.0
+offset_left = 381.0
+offset_top = 1.0
+offset_right = 637.0
+offset_bottom = 257.0
+metadata/_edit_use_anchors_ = true
+
+[connection signal="ingredient_to_null_to_slot" from="mixercontrol" to="ingredient_list" method="_on_mixercontrol_ingredient_to_null_to_slot"]

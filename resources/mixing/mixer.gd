@@ -1,23 +1,24 @@
-extends Control
-
-signal ingredient_dropped(ingredient_data)
-
+extends TextureRect
 var added_ingredients: Array = []
 
-func can_drop_data(_pos, data):
-	print("👀 Dragged data received")
-	return data is Resource
+signal ingredient_dropped(ingredient_data)
+signal ingredient_to_null()
+signal mixing_successful()
+signal mixing_unsuccessful()
 
-func drop_data(_pos, data):
+func _can_drop_data(_pos, data):
+	return data is IngredientData
+
+func _drop_data(_pos, data):	
 	added_ingredients.append(data)
 	emit_signal("ingredient_dropped", data)
-	print("✅")
-
+	emit_signal("ingredient_to_null")
+	
 	if added_ingredients.size() >= 3:
-		process_potion()
+		process_potion(data)
 		added_ingredients.clear()
 
-func process_potion():
+func process_potion(data):
 	var types = {
 		"base": false,
 		"booster": false,
@@ -29,6 +30,16 @@ func process_potion():
 			types[ingredient.type] = true
 
 	if types["base"] and types["booster"] and types["stabilizer"]:
-		print("🎉 Potion crafted successfully!")
+		emit_signal("mixing_successful")
 	else:
-		print("⚠️ Invalid mix: Missing ingredient types")
+		emit_signal("mixing_unsuccessful")
+
+
+func _on_stirring_mixleft_pressed() -> void:
+	$ProgressBar.value += 0.1
+
+func _on_stirring_mixright_pressed() -> void:
+	$ProgressBar.value -= 0.1
+
+func _on_stirring_mixup_pressed() -> void:
+	$ProgressBar.value += 0.1

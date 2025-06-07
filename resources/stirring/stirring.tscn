@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://ct7ujtcypcufs"]
+
+[ext_resource type="Script" uid="uid://bimoghan7id3s" path="res://resources/stirring/stirring.gd" id="1_jry5k"]
+[ext_resource type="Texture2D" uid="uid://b7sf4cmiowegi" path="res://icon.svg" id="1_n4upx"]
+
+[node name="stirring" type="Control"]
+custom_minimum_size = Vector2(400, 256)
+layout_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -325.0
+offset_right = 40.0
+offset_bottom = -285.0
+grow_vertical = 2
+script = ExtResource("1_jry5k")
+
+[node name="MixUp" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_right = 64.0
+offset_bottom = 128.0
+grow_horizontal = 2
+texture = ExtResource("1_n4upx")
+
+[node name="MixLeft" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -128.0
+offset_right = 128.0
+grow_vertical = 0
+texture = ExtResource("1_n4upx")
+
+[node name="MixRight" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -128.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("1_n4upx")

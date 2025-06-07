@@ -1,10 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://cscwbttw746x1"]
+[gd_scene load_steps=4 format=3 uid="uid://cscwbttw746x1"]
 
 [ext_resource type="Script" uid="uid://nvktkll2sfwe" path="res://potionmixing.gd" id="1_hsbcm"]
 [ext_resource type="PackedScene" uid="uid://bb75yjfiuehmq" path="res://resources/mixing/mixer.tscn" id="2_of3wd"]
+[ext_resource type="PackedScene" uid="uid://ct7ujtcypcufs" path="res://resources/stirring/stirring.tscn" id="3_of3wd"]
 
 [node name="mixercontrol" type="Control"]
-custom_minimum_size = Vector2(128, 128)
+custom_minimum_size = Vector2(600, 256)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 64.0
@@ -13,39 +14,43 @@ script = ExtResource("1_hsbcm")
 
 [node name="mixer" parent="." instance=ExtResource("2_of3wd")]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="stirring" parent="." instance=ExtResource("3_of3wd")]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -342.0
+offset_top = -128.0
+offset_right = 58.0
+offset_bottom = 128.0
+grow_horizontal = 0
+mouse_filter = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -20.0
 
 [node name="ResultLabel" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
+anchors_preset = 10
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 1.0
-offset_bottom = 24.0
+offset_top = 161.0
+offset_bottom = 184.0
 grow_horizontal = 2
-grow_vertical = 0
 
-[node name="Button" type="Button" parent="."]
-custom_minimum_size = Vector2(70, 20)
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = 89.0
-offset_right = 70.0
-offset_bottom = 120.0
-grow_vertical = 2
-text = "Mix!"
-
+[connection signal="stirringready" from="." to="stirring" method="_on_mixercontrol_stirringready"]
 [connection signal="ingredient_dropped" from="mixer" to="." method="_on_mixer_ingredient_dropped"]
-[connection signal="mixing_successful" from="mixer" to="." method="_on_mixer_mixing_successful"]
-[connection signal="mixing_unsuccessful" from="mixer" to="." method="_on_mixer_mixing_unsuccessful"]
+[connection signal="ingredient_to_null" from="mixer" to="." method="_on_mixer_ingredient_to_null"]
+[connection signal="start_mix" from="mixer/mixbutton" to="stirring" method="_on_mixbutton_start_mix"]
+[connection signal="mixleft_pressed" from="stirring" to="mixer" method="_on_stirring_mixleft_pressed"]
+[connection signal="mixright_pressed" from="stirring" to="mixer" method="_on_stirring_mixright_pressed"]
+[connection signal="mixup_pressed" from="stirring" to="mixer" method="_on_stirring_mixup_pressed"]
+
+[editable path="mixer"]

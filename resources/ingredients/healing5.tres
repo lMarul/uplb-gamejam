@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="IngredientData" load_steps=5 format=3 uid="uid://lu065hl03m12"]
+
+[ext_resource type="Script" uid="uid://ckwlw7x3vgbe3" path="res://resources/ingredients/ingredient_resources.gd" id="1_wah46"]
+[ext_resource type="AudioStream" uid="uid://bib1sb38hnqsc" path="res://resources/ingredients/sounds/PlaceIngredientWet.mp3" id="2_yjhcx"]
+
+[sub_resource type="Gradient" id="Gradient_tylxa"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.466375, 0.147806, 0.308612, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_no13g"]
+gradient = SubResource("Gradient_tylxa")
+
+[resource]
+script = ExtResource("1_wah46")
+name = "Ingredient 5"
+type = "booster"
+properties = {}
+explosive_chance = 0.0
+icon = SubResource("GradientTexture2D_no13g")
+sound_effect = ExtResource("2_yjhcx")

@@ -8,6 +8,6 @@ func _get_drag_data(_at_position: Vector2) -> Variant:
 	preview.texture = ingredient_data.icon
 	set_drag_preview(preview)
 	return ingredient_data
-
-func change_text():
-	$Label.text = name
+	
+func _ready():
+	$Label.text = ingredient_data.name
