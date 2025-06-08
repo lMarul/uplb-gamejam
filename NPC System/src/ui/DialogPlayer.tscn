@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://cum3uhbgu6q8j"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bc5pd"]
+load_path = "res://.godot/imported/board.png-b2574cb4e3c78d8c91f8933e536e982c.ctex"
+
+[node name="DialogPlayer" type="CanvasLayer"]
+process_mode = 3
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -930.0
+offset_top = 23.0
+offset_right = -674.0
+offset_bottom = 279.0
+grow_horizontal = 2
+scale = Vector2(4, 4)
+texture = SubResource("CompressedTexture2D_bc5pd")
+
+[node name="TextLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -72.0
+offset_top = 40.0
+offset_right = 72.0
+offset_bottom = 90.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.0784314, 0.0627451, 0.0745098, 1)
+autowrap_mode = 2
