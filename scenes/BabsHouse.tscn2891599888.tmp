@@ -1,0 +1,182 @@
+[gd_scene load_steps=17 format=3 uid="uid://c60nqe0vbf61k"]
+
+[ext_resource type="Texture2D" uid="uid://timusfl20hrr" path="res://icon.svg" id="1_lodhi"]
+[ext_resource type="Texture2D" uid="uid://bstxmt4fsvcpv" path="res://assets/sprites/doorBottomEdited.png" id="2_wai73"]
+[ext_resource type="Texture2D" uid="uid://c50gcpypoecys" path="res://assets/sprites/babHouse.png" id="3_hbabr"]
+[ext_resource type="Texture2D" uid="uid://2tpyc5rdlrj1" path="res://assets/sprites/doorTopEdited.png" id="4_lc2nc"]
+[ext_resource type="PackedScene" uid="uid://dk1cqtlq4h15v" path="res://scenes/player.tscn" id="5_sypmv"]
+[ext_resource type="Script" uid="uid://1autqc43hftk" path="res://scenes/player.gd" id="6_ht6w7"]
+[ext_resource type="PackedScene" uid="uid://cum3uhbgu6q8j" path="res://NPC System/src/ui/DialogPlayer.tscn" id="7_lc2nc"]
+[ext_resource type="PackedScene" path="res://NPC System/src/world/DialogArea.tscn" id="7_sypmv"]
+[ext_resource type="Script" uid="uid://cvlxr40pug8ju" path="res://NPC System/src/world/DialogArea.gd" id="8_ht6w7"]
+[ext_resource type="Script" uid="uid://cffeddpxrss46" path="res://NPC System/src/ui/DialogPlayer.gd" id="8_sypmv"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qvf5l"]
+texture = ExtResource("1_lodhi")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+3:7/0 = 0
+2:7/0 = 0
+1:7/0 = 0
+0:7/0 = 0
+7:7/0 = 0
+6:7/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qe4ka"]
+texture = ExtResource("2_wai73")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yepge"]
+texture = ExtResource("3_hbabr")
+4:0/size_in_atlas = Vector2i(4, 4)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+8:0/size_in_atlas = Vector2i(4, 4)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+12:0/size_in_atlas = Vector2i(4, 4)
+12:0/0 = 0
+16:0/size_in_atlas = Vector2i(4, 4)
+16:0/0 = 0
+20:0/size_in_atlas = Vector2i(4, 4)
+20:0/0 = 0
+24:0/size_in_atlas = Vector2i(4, 4)
+24:0/0 = 0
+28:0/size_in_atlas = Vector2i(4, 4)
+28:0/0 = 0
+0:0/size_in_atlas = Vector2i(4, 4)
+0:0/next_alternative_id = 2
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0gmlu"]
+texture = ExtResource("4_lc2nc")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_we7s7"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_qvf5l")
+sources/10 = SubResource("TileSetAtlasSource_yepge")
+sources/1 = SubResource("TileSetAtlasSource_qe4ka")
+sources/2 = SubResource("TileSetAtlasSource_0gmlu")
+tile_proxies/coords_level = [[1, Vector2i(0, 0)], [10, Vector2i(0, 0)], [1, Vector2i(0, 1)], [10, Vector2i(0, 1)], [1, Vector2i(0, 2)], [10, Vector2i(0, 2)], [1, Vector2i(0, 3)], [10, Vector2i(0, 3)], [1, Vector2i(1, 0)], [10, Vector2i(1, 0)], [1, Vector2i(1, 1)], [10, Vector2i(1, 1)], [1, Vector2i(1, 2)], [10, Vector2i(1, 2)], [1, Vector2i(1, 3)], [10, Vector2i(1, 3)], [1, Vector2i(2, 0)], [10, Vector2i(2, 0)], [1, Vector2i(2, 1)], [10, Vector2i(2, 1)], [1, Vector2i(2, 2)], [10, Vector2i(2, 2)], [1, Vector2i(2, 3)], [10, Vector2i(2, 3)], [1, Vector2i(3, 0)], [10, Vector2i(3, 0)], [1, Vector2i(3, 1)], [10, Vector2i(3, 1)], [1, Vector2i(3, 2)], [10, Vector2i(3, 2)], [1, Vector2i(3, 3)], [10, Vector2i(3, 3)], [2, Vector2i(0, 0)], [10, Vector2i(4, 0)], [2, Vector2i(0, 1)], [10, Vector2i(4, 1)], [2, Vector2i(0, 2)], [10, Vector2i(4, 2)], [2, Vector2i(0, 3)], [10, Vector2i(4, 3)], [2, Vector2i(1, 0)], [10, Vector2i(5, 0)], [2, Vector2i(1, 1)], [10, Vector2i(5, 1)], [2, Vector2i(1, 2)], [10, Vector2i(5, 2)], [2, Vector2i(1, 3)], [10, Vector2i(5, 3)], [2, Vector2i(2, 0)], [10, Vector2i(6, 0)], [2, Vector2i(2, 1)], [10, Vector2i(6, 1)], [2, Vector2i(2, 2)], [10, Vector2i(6, 2)], [2, Vector2i(2, 3)], [10, Vector2i(6, 3)], [2, Vector2i(3, 0)], [10, Vector2i(7, 0)], [2, Vector2i(3, 1)], [10, Vector2i(7, 1)], [2, Vector2i(3, 2)], [10, Vector2i(7, 2)], [2, Vector2i(3, 3)], [10, Vector2i(7, 3)], [3, Vector2i(0, 0)], [10, Vector2i(8, 0)], [3, Vector2i(0, 1)], [10, Vector2i(8, 1)], [3, Vector2i(0, 2)], [10, Vector2i(8, 2)], [3, Vector2i(0, 3)], [10, Vector2i(8, 3)], [3, Vector2i(1, 0)], [10, Vector2i(9, 0)], [3, Vector2i(1, 1)], [10, Vector2i(9, 1)], [3, Vector2i(1, 2)], [10, Vector2i(9, 2)], [3, Vector2i(1, 3)], [10, Vector2i(9, 3)], [3, Vector2i(2, 0)], [10, Vector2i(10, 0)], [3, Vector2i(2, 1)], [10, Vector2i(10, 1)], [3, Vector2i(2, 2)], [10, Vector2i(10, 2)], [3, Vector2i(2, 3)], [10, Vector2i(10, 3)], [3, Vector2i(3, 0)], [10, Vector2i(11, 0)], [3, Vector2i(3, 1)], [10, Vector2i(11, 1)], [3, Vector2i(3, 2)], [10, Vector2i(11, 2)], [3, Vector2i(3, 3)], [10, Vector2i(11, 3)], [4, Vector2i(0, 0)], [10, Vector2i(12, 0)], [4, Vector2i(0, 1)], [10, Vector2i(12, 1)], [4, Vector2i(0, 2)], [10, Vector2i(12, 2)], [4, Vector2i(0, 3)], [10, Vector2i(12, 3)], [4, Vector2i(1, 0)], [10, Vector2i(13, 0)], [4, Vector2i(1, 1)], [10, Vector2i(13, 1)], [4, Vector2i(1, 2)], [10, Vector2i(13, 2)], [4, Vector2i(1, 3)], [10, Vector2i(13, 3)], [4, Vector2i(2, 0)], [10, Vector2i(14, 0)], [4, Vector2i(2, 1)], [10, Vector2i(14, 1)], [4, Vector2i(2, 2)], [10, Vector2i(14, 2)], [4, Vector2i(2, 3)], [10, Vector2i(14, 3)], [4, Vector2i(3, 0)], [10, Vector2i(15, 0)], [4, Vector2i(3, 1)], [10, Vector2i(15, 1)], [4, Vector2i(3, 2)], [10, Vector2i(15, 2)], [4, Vector2i(3, 3)], [10, Vector2i(15, 3)], [5, Vector2i(0, 0)], [10, Vector2i(16, 0)], [5, Vector2i(0, 1)], [10, Vector2i(16, 1)], [5, Vector2i(0, 2)], [10, Vector2i(16, 2)], [5, Vector2i(0, 3)], [10, Vector2i(16, 3)], [5, Vector2i(1, 0)], [10, Vector2i(17, 0)], [5, Vector2i(1, 1)], [10, Vector2i(17, 1)], [5, Vector2i(1, 2)], [10, Vector2i(17, 2)], [5, Vector2i(1, 3)], [10, Vector2i(17, 3)], [5, Vector2i(2, 0)], [10, Vector2i(18, 0)], [5, Vector2i(2, 1)], [10, Vector2i(18, 1)], [5, Vector2i(2, 2)], [10, Vector2i(18, 2)], [5, Vector2i(2, 3)], [10, Vector2i(18, 3)], [5, Vector2i(3, 0)], [10, Vector2i(19, 0)], [5, Vector2i(3, 1)], [10, Vector2i(19, 1)], [5, Vector2i(3, 2)], [10, Vector2i(19, 2)], [5, Vector2i(3, 3)], [10, Vector2i(19, 3)], [6, Vector2i(0, 0)], [10, Vector2i(20, 0)], [6, Vector2i(0, 1)], [10, Vector2i(20, 1)], [6, Vector2i(0, 2)], [10, Vector2i(20, 2)], [6, Vector2i(0, 3)], [10, Vector2i(20, 3)], [6, Vector2i(1, 0)], [10, Vector2i(21, 0)], [6, Vector2i(1, 1)], [10, Vector2i(21, 1)], [6, Vector2i(1, 2)], [10, Vector2i(21, 2)], [6, Vector2i(1, 3)], [10, Vector2i(21, 3)], [6, Vector2i(2, 0)], [10, Vector2i(22, 0)], [6, Vector2i(2, 1)], [10, Vector2i(22, 1)], [6, Vector2i(2, 2)], [10, Vector2i(22, 2)], [6, Vector2i(2, 3)], [10, Vector2i(22, 3)], [6, Vector2i(3, 0)], [10, Vector2i(23, 0)], [6, Vector2i(3, 1)], [10, Vector2i(23, 1)], [6, Vector2i(3, 2)], [10, Vector2i(23, 2)], [6, Vector2i(3, 3)], [10, Vector2i(23, 3)], [7, Vector2i(0, 0)], [10, Vector2i(24, 0)], [7, Vector2i(0, 1)], [10, Vector2i(24, 1)], [7, Vector2i(0, 2)], [10, Vector2i(24, 2)], [7, Vector2i(0, 3)], [10, Vector2i(24, 3)], [7, Vector2i(1, 0)], [10, Vector2i(25, 0)], [7, Vector2i(1, 1)], [10, Vector2i(25, 1)], [7, Vector2i(1, 2)], [10, Vector2i(25, 2)], [7, Vector2i(1, 3)], [10, Vector2i(25, 3)], [7, Vector2i(2, 0)], [10, Vector2i(26, 0)], [7, Vector2i(2, 1)], [10, Vector2i(26, 1)], [7, Vector2i(2, 2)], [10, Vector2i(26, 2)], [7, Vector2i(2, 3)], [10, Vector2i(26, 3)], [7, Vector2i(3, 0)], [10, Vector2i(27, 0)], [7, Vector2i(3, 1)], [10, Vector2i(27, 1)], [7, Vector2i(3, 2)], [10, Vector2i(27, 2)], [7, Vector2i(3, 3)], [10, Vector2i(27, 3)], [8, Vector2i(0, 0)], [10, Vector2i(28, 0)], [8, Vector2i(0, 1)], [10, Vector2i(28, 1)], [8, Vector2i(0, 2)], [10, Vector2i(28, 2)], [8, Vector2i(0, 3)], [10, Vector2i(28, 3)], [8, Vector2i(1, 0)], [10, Vector2i(29, 0)], [8, Vector2i(1, 1)], [10, Vector2i(29, 1)], [8, Vector2i(1, 2)], [10, Vector2i(29, 2)], [8, Vector2i(1, 3)], [10, Vector2i(29, 3)], [8, Vector2i(2, 0)], [10, Vector2i(30, 0)], [8, Vector2i(2, 1)], [10, Vector2i(30, 1)], [8, Vector2i(2, 2)], [10, Vector2i(30, 2)], [8, Vector2i(2, 3)], [10, Vector2i(30, 3)], [8, Vector2i(3, 0)], [10, Vector2i(31, 0)], [8, Vector2i(3, 1)], [10, Vector2i(31, 1)], [8, Vector2i(3, 2)], [10, Vector2i(31, 2)], [8, Vector2i(3, 3)], [10, Vector2i(31, 3)], [9, Vector2i(0, 2)], [10, Vector2i(0, 6)], [9, Vector2i(0, 3)], [10, Vector2i(0, 7)], [9, Vector2i(1, 2)], [10, Vector2i(1, 6)], [9, Vector2i(1, 3)], [10, Vector2i(1, 7)], [9, Vector2i(2, 2)], [10, Vector2i(2, 6)], [9, Vector2i(2, 3)], [10, Vector2i(2, 7)], [9, Vector2i(3, 2)], [10, Vector2i(3, 6)], [9, Vector2i(3, 3)], [10, Vector2i(3, 7)]]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_icbjj"]
+size = Vector2(118, 181)
+
+[node name="World" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(717, 986)
+tile_set = SubResource("TileSet_we7s7")
+format = 2
+layer_0/name = "Background"
+layer_0/tile_data = PackedInt32Array(-589830, 1048586, 0, -589829, 1048586, 0, -589828, 1048586, 0, -589827, 1048586, 0, -589825, 1048586, 0, -655360, 1048586, 0, -655359, 1048586, 0, -655358, 1048586, 0, -655357, 1048586, 0, -655356, 1048586, 0, -655355, 1048586, 0, -655354, 1048586, 0, -655353, 1048586, 0, -655352, 1048586, 0, -655351, 1048586, 0, -655350, 1048586, 0, -655349, 1048586, 0, -524294, 1048586, 0, -524293, 1048586, 0, -524292, 1048586, 0, -524291, 1048586, 0, -524290, 1048586, 0, -524289, 1048586, 0, -589824, 1048586, 0, -589823, 1048586, 0, -589822, 1048586, 0, -589821, 1048586, 0, -589820, 1048586, 0, -589819, 1048586, 0, -589818, 1048586, 0, -589817, 1048586, 0, -589816, 1048586, 0, -589815, 1048586, 0, -589814, 1048586, 0, -589813, 1048586, 0, -458758, 1048586, 0, -458757, 1048586, 0, -458756, 1048586, 0, -458755, 1048586, 0, -458754, 1048586, 0, -458753, 1048586, 0, -524288, 1048586, 0, -524287, 1048586, 0, -524286, 1048586, 0, -524285, 1048586, 0, -524284, 1048586, 0, -524283, 1048586, 0, -524282, 1048586, 0, -524281, 1048586, 0, -524280, 1048586, 0, -524279, 1048586, 0, -524278, 1048586, 0, -524277, 1048586, 0, -393222, 1048586, 0, -393221, 1048586, 0, -393220, 1048586, 0, -393219, 1048586, 0, -393218, 1048586, 0, -393217, 1048586, 0, -458752, 1048586, 0, -458751, 1048586, 0, -458750, 1048586, 0, -458749, 1048586, 0, -458748, 1048586, 0, -458747, 1048586, 0, -458746, 1048586, 0, -458745, 1048586, 0, -458744, 1048586, 0, -458743, 1048586, 0, -458742, 1048586, 0, -458741, 1048586, 0, -327686, 1048586, 0, -327685, 1048586, 0, -327684, 1048586, 0, -327683, 1048586, 0, -327682, 1048586, 0, -327681, 1048586, 0, -393216, 1048586, 0, -393215, 1048586, 0, -393214, 1048586, 0, -393213, 1048586, 0, -393212, 1048586, 0, -393211, 1048586, 0, -393210, 1048586, 0, -393209, 1048586, 0, -393208, 1048586, 0, -393207, 1048586, 0, -393206, 1048586, 0, -393205, 1048586, 0, -262150, 786442, 0, -262147, 786442, 0, -262146, 786442, 0, -262145, 786442, 0, -327680, 786442, 0, -327679, 786442, 0, -327678, 786442, 0, -327677, 786442, 0, -327676, 786442, 0, -327675, 786442, 0, -327674, 786442, 0, -327673, 786442, 0, -327672, 786442, 0, -327671, 786442, 0, -327670, 786442, 0, -262149, 786442, 0, -655366, 1310730, 0, -655363, 1310730, 0, -655362, 1310730, 0, -589826, 1048586, 0, -655361, 1310730, 0, -720896, 1310730, 0, -262148, 1048586, 0, -327669, 786442, 0, -786438, 1572874, 0, -786437, 1572874, 0, -786436, 1572874, 0, -786435, 1572874, 0, -786434, 1572874, 0, -786433, 1572874, 0, -851968, 1572874, 0, -851967, 1572874, 0, -851966, 1572874, 0, -851965, 1572874, 0, -851964, 1572874, 0, -851963, 1572874, 0, -851962, 1572874, 0, -851961, 1572874, 0, -851960, 1572874, 0, -851959, 1572874, 0, -851958, 1572874, 0, -851957, 1572874, 0, -786430, 1572874, 0, -786429, 1572874, 0, -786428, 1572874, 0, -786427, 1572874, 0, -786426, 1572874, 0, -786425, 1572874, 0, -786424, 1572874, 0, -786423, 1572874, 0, -786422, 1572874, 0, -786421, 1572874, 0, -327668, 786442, 0, -327667, 786442, 0, -393204, 1048586, 0, -393203, 1048586, 0, -458739, 1048586, 0, -524275, 1048586, 0, -589811, 1048586, 0, -589812, 1048586, 0, -655348, 1048586, 0, -655347, 1048586, 0, -524276, 1048586, 0, -458740, 1048586, 0, -851956, 1572874, 0, -851955, 1572874, 0, -786420, 1572874, 0, -851974, 1572874, 0, -851973, 1572874, 0, -851972, 1572874, 0, -851971, 1572874, 0, -851970, 1572874, 0, -851969, 1572874, 0, -917504, 1572874, 0, -917503, 1572874, 0, -917502, 1572874, 0, -917501, 1572874, 0, -917500, 1572874, 0, -917499, 1572874, 0, -917498, 1572874, 0, -917497, 1572874, 0, -917496, 1572874, 0, -917495, 1572874, 0, -917494, 1572874, 0, -917493, 1572874, 0, -917492, 1572874, 0, -917491, 1572874, 0, -720900, 1572874, 0, -720899, 1572874, 0, -720898, 1572874, 0, -720897, 1572874, 0, -786432, 1572874, 0, -786431, 1572874, 0, -720895, 1310730, 0, -720894, 1310730, 0, -720893, 1310730, 0, -720892, 1310730, 0, -720891, 1310730, 0, -720890, 1310730, 0, -720889, 1310730, 0, -720888, 1310730, 0, -720887, 1310730, 0, -720886, 1310730, 0, -720885, 1310730, 0, -720884, 1310730, 0, -720883, 1310730, 0, -786419, 1572874, 0, -655364, 1310730, 0, -655365, 1310730, 0, -720902, 1572874, 0, -720901, 1572874, 0)
+layer_1/name = "Mid"
+layer_1/tile_data = PackedInt32Array(-131078, 10, 0, -131077, 10, 0, -131076, 10, 0, -131075, 10, 0, -131074, 10, 0, -131073, 10, 0, -196608, 10, 0, -196607, 10, 0, -196606, 10, 0, -196605, 10, 0, -196604, 10, 0, -196603, 10, 0, -196602, 10, 0, -196601, 10, 0, -196600, 10, 0, -196599, 10, 0, -196598, 10, 0, -196597, 10, 0, -196614, 524298, 0, -196613, 524298, 0, -196612, 262154, 0, -196611, 262154, 0, -196610, 262154, 0, -196609, 262154, 0, -262144, 262154, 0, -262143, 524298, 0, -262142, 524298, 0, -262141, 524298, 0, -262140, 524298, 0, -262139, 524298, 0, -262138, 524298, 0, -262137, 524298, 0, -262136, 524298, 0, -262135, 524298, 0, -262134, 524298, 0, -262133, 524298, 0, -262148, 1, 0, -327684, 2, 0, -262132, 524298, 0, -262131, 524298, 0, -196596, 10, 0, -196595, 10, 0, -589831, 10, 0, -524295, 10, 0, -458759, 10, 0, -393223, 10, 0, -327687, 10, 0, -262151, 10, 0, -327666, 10, 0, -393202, 10, 0, -458738, 10, 0, -524274, 10, 0, -589810, 10, 0, -655346, 10, 0)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("5_sypmv")]
+position = Vector2(571, 730)
+scale = Vector2(6, 6)
+script = ExtResource("6_ht6w7")
+
+[node name="DialogPlayer" parent="CharacterBody2D" instance=ExtResource("7_lc2nc")]
+script = ExtResource("8_sypmv")
+scene_text_file = "res://NPC System/assets/json/world_dialog.json"
+vertical_offset = null
+
+[node name="Background" parent="CharacterBody2D/DialogPlayer" index="0"]
+offset_left = -8.0
+offset_top = 551.0
+offset_right = 72.0
+offset_bottom = 581.0
+
+[node name="TextLabel" parent="CharacterBody2D/DialogPlayer" index="1"]
+offset_left = 0.0
+offset_top = 556.0
+offset_right = 144.0
+offset_bottom = 606.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(973, 498)
+zoom = Vector2(1.5, 1.5)
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(1204, 492)
+texture = ExtResource("1_lodhi")
+
+[node name="DialogAreaPatient1" parent="." instance=ExtResource("7_sypmv")]
+position = Vector2(714, 986)
+script = ExtResource("8_ht6w7")
+text_key = "patientOne"
+
+[node name="CollisionShape2D" parent="DialogAreaPatient1" index="0"]
+position = Vector2(484, -336)
+shape = SubResource("RectangleShape2D_icbjj")
+
+[connection signal="area_entered" from="DialogAreaPatient1" to="CharacterBody2D" method="_on_dialog_area_area_entered"]
+[connection signal="area_exited" from="DialogAreaPatient1" to="CharacterBody2D" method="_on_dialog_area_area_exited"]
+
+[editable path="CharacterBody2D/DialogPlayer"]
+[editable path="DialogAreaPatient1"]

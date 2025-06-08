@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgpgrhji2xd1u"]
+
+[ext_resource type="Script" uid="uid://5fnq0eocmoqc" path="res://map.gd" id="1_lajc7"]
+[ext_resource type="Texture2D" uid="uid://ce0lwge566pj1" path="res://assets/sprites/[0] mapV2.png" id="2_lajc7"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lajc7")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -1.52588e-05
+offset_right = 640.0
+offset_bottom = 448.0
+scale = Vector2(3, 3)
+texture = ExtResource("2_lajc7")
+stretch_mode = 5
+
+[node name="Bab\'s House" type="Button" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = 208.0
+offset_top = 343.0
+offset_right = 434.0
+offset_bottom = 444.0
+text = "Bab's House
+"
+
+[node name="Plaza" type="Button" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = 1388.0
+offset_top = 344.0
+offset_right = 1605.0
+offset_bottom = 426.0
+text = "Plaza
+"
+
+[node name="Worship Area" type="Button" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = 524.0
+offset_top = 245.0
+offset_right = 739.0
+offset_bottom = 327.0
+text = "Worship Area
+"
+
+[node name="Healing Area" type="Button" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = 877.0
+offset_top = 507.0
+offset_right = 1093.0
+offset_bottom = 590.0
+text = "Healing Area
+"

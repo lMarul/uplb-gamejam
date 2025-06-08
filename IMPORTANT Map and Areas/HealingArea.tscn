@@ -1,0 +1,243 @@
+[gd_scene load_steps=27 format=3 uid="uid://dygudbafsfcbj"]
+
+[ext_resource type="Texture2D" uid="uid://timusfl20hrr" path="res://icon.svg" id="1_q4tjn"]
+[ext_resource type="Texture2D" uid="uid://bstxmt4fsvcpv" path="res://assets/sprites/doorBottomEdited.png" id="2_0eawr"]
+[ext_resource type="Texture2D" uid="uid://c50gcpypoecys" path="res://assets/sprites/babHouse.png" id="3_ihjqk"]
+[ext_resource type="Texture2D" uid="uid://db2x5asls1763" path="res://assets/sprites/Plaza/PlazaSheet.png" id="4_0lg8f"]
+[ext_resource type="Texture2D" uid="uid://2tpyc5rdlrj1" path="res://assets/sprites/doorTopEdited.png" id="5_rtxrq"]
+[ext_resource type="PackedScene" uid="uid://dk1cqtlq4h15v" path="res://scenes/player.tscn" id="6_xtvkw"]
+[ext_resource type="PackedScene" uid="uid://cum3uhbgu6q8j" path="res://NPC System/src/ui/DialogPlayer.tscn" id="8_rt2pc"]
+[ext_resource type="Script" uid="uid://cffeddpxrss46" path="res://NPC System/src/ui/DialogPlayer.gd" id="9_ku7qc"]
+[ext_resource type="PackedScene" path="res://NPC System/src/world/DialogArea.tscn" id="10_wff06"]
+[ext_resource type="Script" uid="uid://cvlxr40pug8ju" path="res://NPC System/src/world/DialogArea.gd" id="11_2di6d"]
+[ext_resource type="Texture2D" uid="uid://doudt107gin75" path="res://assets/sprites/Patient3.png" id="12_q4tjn"]
+[ext_resource type="Texture2D" uid="uid://cc08tfmd402qn" path="res://0_healing_room.png" id="13_0eawr"]
+[ext_resource type="Texture2D" uid="uid://bix7i8hyslglg" path="res://assets/sprites/Back Button.png" id="14_0lg8f"]
+[ext_resource type="Script" uid="uid://dh6yr0grl4451" path="res://scenes/back_button.gd" id="15_rtxrq"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qvf5l"]
+texture = ExtResource("1_q4tjn")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+3:7/0 = 0
+2:7/0 = 0
+1:7/0 = 0
+0:7/0 = 0
+7:7/0 = 0
+6:7/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qe4ka"]
+texture = ExtResource("2_0eawr")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yepge"]
+texture = ExtResource("3_ihjqk")
+4:0/size_in_atlas = Vector2i(4, 4)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+8:0/size_in_atlas = Vector2i(4, 4)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+12:0/size_in_atlas = Vector2i(4, 4)
+12:0/0 = 0
+16:0/size_in_atlas = Vector2i(4, 4)
+16:0/0 = 0
+20:0/size_in_atlas = Vector2i(4, 4)
+20:0/0 = 0
+24:0/size_in_atlas = Vector2i(4, 4)
+24:0/0 = 0
+28:0/size_in_atlas = Vector2i(4, 4)
+28:0/0 = 0
+0:0/size_in_atlas = Vector2i(4, 4)
+0:0/next_alternative_id = 2
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_meaom"]
+texture = ExtResource("4_0lg8f")
+texture_region_size = Vector2i(64, 64)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v1i6k"]
+texture = ExtResource("4_0lg8f")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+2:0/size_in_atlas = Vector2i(2, 2)
+2:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0gmlu"]
+texture = ExtResource("5_rtxrq")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u31aa"]
+texture = ExtResource("4_0lg8f")
+texture_region_size = Vector2i(64, 64)
+
+[sub_resource type="TileSet" id="TileSet_we7s7"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_qvf5l")
+sources/10 = SubResource("TileSetAtlasSource_yepge")
+sources/1 = SubResource("TileSetAtlasSource_qe4ka")
+sources/2 = SubResource("TileSetAtlasSource_0gmlu")
+sources/9 = SubResource("TileSetAtlasSource_u31aa")
+sources/11 = SubResource("TileSetAtlasSource_meaom")
+sources/18 = SubResource("TileSetAtlasSource_v1i6k")
+tile_proxies/coords_level = [[1, Vector2i(0, 0)], [10, Vector2i(0, 0)], [1, Vector2i(0, 1)], [10, Vector2i(0, 1)], [1, Vector2i(0, 2)], [10, Vector2i(0, 2)], [1, Vector2i(0, 3)], [10, Vector2i(0, 3)], [1, Vector2i(1, 0)], [10, Vector2i(1, 0)], [1, Vector2i(1, 1)], [10, Vector2i(1, 1)], [1, Vector2i(1, 2)], [10, Vector2i(1, 2)], [1, Vector2i(1, 3)], [10, Vector2i(1, 3)], [1, Vector2i(2, 0)], [10, Vector2i(2, 0)], [1, Vector2i(2, 1)], [10, Vector2i(2, 1)], [1, Vector2i(2, 2)], [10, Vector2i(2, 2)], [1, Vector2i(2, 3)], [10, Vector2i(2, 3)], [1, Vector2i(3, 0)], [10, Vector2i(3, 0)], [1, Vector2i(3, 1)], [10, Vector2i(3, 1)], [1, Vector2i(3, 2)], [10, Vector2i(3, 2)], [1, Vector2i(3, 3)], [10, Vector2i(3, 3)], [2, Vector2i(0, 0)], [10, Vector2i(4, 0)], [2, Vector2i(0, 1)], [10, Vector2i(4, 1)], [2, Vector2i(0, 2)], [10, Vector2i(4, 2)], [2, Vector2i(0, 3)], [10, Vector2i(4, 3)], [2, Vector2i(1, 0)], [10, Vector2i(5, 0)], [2, Vector2i(1, 1)], [10, Vector2i(5, 1)], [2, Vector2i(1, 2)], [10, Vector2i(5, 2)], [2, Vector2i(1, 3)], [10, Vector2i(5, 3)], [2, Vector2i(2, 0)], [10, Vector2i(6, 0)], [2, Vector2i(2, 1)], [10, Vector2i(6, 1)], [2, Vector2i(2, 2)], [10, Vector2i(6, 2)], [2, Vector2i(2, 3)], [10, Vector2i(6, 3)], [2, Vector2i(3, 0)], [10, Vector2i(7, 0)], [2, Vector2i(3, 1)], [10, Vector2i(7, 1)], [2, Vector2i(3, 2)], [10, Vector2i(7, 2)], [2, Vector2i(3, 3)], [10, Vector2i(7, 3)], [3, Vector2i(0, 0)], [10, Vector2i(8, 0)], [3, Vector2i(0, 1)], [10, Vector2i(8, 1)], [3, Vector2i(0, 2)], [10, Vector2i(8, 2)], [3, Vector2i(0, 3)], [10, Vector2i(8, 3)], [3, Vector2i(1, 0)], [10, Vector2i(9, 0)], [3, Vector2i(1, 1)], [10, Vector2i(9, 1)], [3, Vector2i(1, 2)], [10, Vector2i(9, 2)], [3, Vector2i(1, 3)], [10, Vector2i(9, 3)], [3, Vector2i(2, 0)], [10, Vector2i(10, 0)], [3, Vector2i(2, 1)], [10, Vector2i(10, 1)], [3, Vector2i(2, 2)], [10, Vector2i(10, 2)], [3, Vector2i(2, 3)], [10, Vector2i(10, 3)], [3, Vector2i(3, 0)], [10, Vector2i(11, 0)], [3, Vector2i(3, 1)], [10, Vector2i(11, 1)], [3, Vector2i(3, 2)], [10, Vector2i(11, 2)], [3, Vector2i(3, 3)], [10, Vector2i(11, 3)], [4, Vector2i(0, 0)], [10, Vector2i(12, 0)], [4, Vector2i(0, 1)], [10, Vector2i(12, 1)], [4, Vector2i(0, 2)], [10, Vector2i(12, 2)], [4, Vector2i(0, 3)], [10, Vector2i(12, 3)], [4, Vector2i(1, 0)], [10, Vector2i(13, 0)], [4, Vector2i(1, 1)], [10, Vector2i(13, 1)], [4, Vector2i(1, 2)], [10, Vector2i(13, 2)], [4, Vector2i(1, 3)], [10, Vector2i(13, 3)], [4, Vector2i(2, 0)], [10, Vector2i(14, 0)], [4, Vector2i(2, 1)], [10, Vector2i(14, 1)], [4, Vector2i(2, 2)], [10, Vector2i(14, 2)], [4, Vector2i(2, 3)], [10, Vector2i(14, 3)], [4, Vector2i(3, 0)], [10, Vector2i(15, 0)], [4, Vector2i(3, 1)], [10, Vector2i(15, 1)], [4, Vector2i(3, 2)], [10, Vector2i(15, 2)], [4, Vector2i(3, 3)], [10, Vector2i(15, 3)], [5, Vector2i(0, 0)], [10, Vector2i(16, 0)], [5, Vector2i(0, 1)], [10, Vector2i(16, 1)], [5, Vector2i(0, 2)], [10, Vector2i(16, 2)], [5, Vector2i(0, 3)], [10, Vector2i(16, 3)], [5, Vector2i(1, 0)], [10, Vector2i(17, 0)], [5, Vector2i(1, 1)], [10, Vector2i(17, 1)], [5, Vector2i(1, 2)], [10, Vector2i(17, 2)], [5, Vector2i(1, 3)], [10, Vector2i(17, 3)], [5, Vector2i(2, 0)], [10, Vector2i(18, 0)], [5, Vector2i(2, 1)], [10, Vector2i(18, 1)], [5, Vector2i(2, 2)], [10, Vector2i(18, 2)], [5, Vector2i(2, 3)], [10, Vector2i(18, 3)], [5, Vector2i(3, 0)], [10, Vector2i(19, 0)], [5, Vector2i(3, 1)], [10, Vector2i(19, 1)], [5, Vector2i(3, 2)], [10, Vector2i(19, 2)], [5, Vector2i(3, 3)], [10, Vector2i(19, 3)], [6, Vector2i(0, 0)], [10, Vector2i(20, 0)], [6, Vector2i(0, 1)], [10, Vector2i(20, 1)], [6, Vector2i(0, 2)], [10, Vector2i(20, 2)], [6, Vector2i(0, 3)], [10, Vector2i(20, 3)], [6, Vector2i(1, 0)], [10, Vector2i(21, 0)], [6, Vector2i(1, 1)], [10, Vector2i(21, 1)], [6, Vector2i(1, 2)], [10, Vector2i(21, 2)], [6, Vector2i(1, 3)], [10, Vector2i(21, 3)], [6, Vector2i(2, 0)], [10, Vector2i(22, 0)], [6, Vector2i(2, 1)], [10, Vector2i(22, 1)], [6, Vector2i(2, 2)], [10, Vector2i(22, 2)], [6, Vector2i(2, 3)], [10, Vector2i(22, 3)], [6, Vector2i(3, 0)], [10, Vector2i(23, 0)], [6, Vector2i(3, 1)], [10, Vector2i(23, 1)], [6, Vector2i(3, 2)], [10, Vector2i(23, 2)], [6, Vector2i(3, 3)], [10, Vector2i(23, 3)], [7, Vector2i(0, 0)], [10, Vector2i(24, 0)], [7, Vector2i(0, 1)], [10, Vector2i(24, 1)], [7, Vector2i(0, 2)], [10, Vector2i(24, 2)], [7, Vector2i(0, 3)], [10, Vector2i(24, 3)], [7, Vector2i(1, 0)], [10, Vector2i(25, 0)], [7, Vector2i(1, 1)], [10, Vector2i(25, 1)], [7, Vector2i(1, 2)], [10, Vector2i(25, 2)], [7, Vector2i(1, 3)], [10, Vector2i(25, 3)], [7, Vector2i(2, 0)], [10, Vector2i(26, 0)], [7, Vector2i(2, 1)], [10, Vector2i(26, 1)], [7, Vector2i(2, 2)], [10, Vector2i(26, 2)], [7, Vector2i(2, 3)], [10, Vector2i(26, 3)], [7, Vector2i(3, 0)], [10, Vector2i(27, 0)], [7, Vector2i(3, 1)], [10, Vector2i(27, 1)], [7, Vector2i(3, 2)], [10, Vector2i(27, 2)], [7, Vector2i(3, 3)], [10, Vector2i(27, 3)], [8, Vector2i(0, 0)], [10, Vector2i(28, 0)], [8, Vector2i(0, 1)], [10, Vector2i(28, 1)], [8, Vector2i(0, 2)], [10, Vector2i(28, 2)], [8, Vector2i(0, 3)], [10, Vector2i(28, 3)], [8, Vector2i(1, 0)], [10, Vector2i(29, 0)], [8, Vector2i(1, 1)], [10, Vector2i(29, 1)], [8, Vector2i(1, 2)], [10, Vector2i(29, 2)], [8, Vector2i(1, 3)], [10, Vector2i(29, 3)], [8, Vector2i(2, 0)], [10, Vector2i(30, 0)], [8, Vector2i(2, 1)], [10, Vector2i(30, 1)], [8, Vector2i(2, 2)], [10, Vector2i(30, 2)], [8, Vector2i(2, 3)], [10, Vector2i(30, 3)], [8, Vector2i(3, 0)], [10, Vector2i(31, 0)], [8, Vector2i(3, 1)], [10, Vector2i(31, 1)], [8, Vector2i(3, 2)], [10, Vector2i(31, 2)], [8, Vector2i(3, 3)], [10, Vector2i(31, 3)], [9, Vector2i(0, 2)], [10, Vector2i(0, 6)], [9, Vector2i(0, 3)], [10, Vector2i(0, 7)], [9, Vector2i(1, 2)], [10, Vector2i(1, 6)], [9, Vector2i(1, 3)], [10, Vector2i(1, 7)], [9, Vector2i(2, 2)], [10, Vector2i(2, 6)], [9, Vector2i(2, 3)], [10, Vector2i(2, 7)], [9, Vector2i(3, 2)], [10, Vector2i(3, 6)], [9, Vector2i(3, 3)], [10, Vector2i(3, 7)], [12, Vector2i(0, 0)], [18, Vector2i(0, 0)], [12, Vector2i(0, 1)], [18, Vector2i(0, 1)], [12, Vector2i(1, 0)], [18, Vector2i(1, 0)], [12, Vector2i(1, 1)], [18, Vector2i(1, 1)], [13, Vector2i(0, 0)], [18, Vector2i(2, 0)], [13, Vector2i(0, 1)], [18, Vector2i(2, 1)], [13, Vector2i(1, 0)], [18, Vector2i(3, 0)], [13, Vector2i(1, 1)], [18, Vector2i(3, 1)], [14, Vector2i(0, 0)], [18, Vector2i(4, 0)], [15, Vector2i(0, 0)], [18, Vector2i(5, 0)], [15, Vector2i(0, 1)], [18, Vector2i(5, 1)], [15, Vector2i(1, 0)], [18, Vector2i(6, 0)], [15, Vector2i(1, 1)], [18, Vector2i(6, 1)], [16, Vector2i(0, 0)], [18, Vector2i(7, 0)], [16, Vector2i(0, 1)], [18, Vector2i(7, 1)], [16, Vector2i(1, 0)], [18, Vector2i(8, 0)], [16, Vector2i(1, 1)], [18, Vector2i(8, 1)], [17, Vector2i(0, 0)], [18, Vector2i(9, 0)]]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_icbjj"]
+size = Vector2(118, 181)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0eawr"]
+atlas = ExtResource("12_q4tjn")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihjqk"]
+atlas = ExtResource("12_q4tjn")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8avjv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0eawr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ihjqk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="Plaza" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(717, 986)
+tile_set = SubResource("TileSet_we7s7")
+format = 2
+layer_0/name = "Background"
+layer_1/name = "Mid"
+layer_1/tile_data = PackedInt32Array(-131078, 10, 0, -131077, 10, 0, -131076, 10, 0, -131075, 10, 0, -131074, 10, 0, -131073, 10, 0, -196608, 10, 0, -196607, 10, 0, -196606, 10, 0, -196605, 10, 0, -196604, 10, 0, -196603, 10, 0, -196602, 10, 0, -196601, 10, 0, -196600, 10, 0, -196599, 10, 0, -196598, 10, 0, -196597, 10, 0, -196614, 524298, 0, -196613, 524298, 0, -196612, 262154, 0, -196611, 262154, 0, -196610, 262154, 0, -196609, 262154, 0, -262144, 262154, 0, -262143, 524298, 0, -262142, 524298, 0, -262141, 524298, 0, -262140, 524298, 0, -262139, 524298, 0, -262138, 524298, 0, -262137, 524298, 0, -262136, 524298, 0, -262135, 524298, 0, -262134, 524298, 0, -262133, 524298, 0, -262132, 524298, 0, -262131, 524298, 0, -196596, 10, 0, -196595, 10, 0, -589831, 10, 0, -524295, 10, 0, -458759, 10, 0, -393223, 10, 0, -327687, 10, 0, -262151, 10, 0, -327666, 10, 0, -393202, 10, 0, -458738, 10, 0, -524274, 10, 0, -589810, 10, 0, -655346, 10, 0)
+
+[node name="Player" parent="." instance=ExtResource("6_xtvkw")]
+position = Vector2(571, 731)
+scale = Vector2(10, 10)
+
+[node name="DialogPlayer" parent="Player" instance=ExtResource("8_rt2pc")]
+script = ExtResource("9_ku7qc")
+scene_text_file = "res://NPC System/assets/json/world_dialog.json"
+
+[node name="Background" parent="Player/DialogPlayer" index="0"]
+offset_left = 316.0
+offset_top = 389.0
+offset_right = 444.0
+offset_bottom = 517.0
+scale = Vector2(2, 2)
+
+[node name="TextLabel" parent="Player/DialogPlayer" index="1"]
+offset_left = 355.0
+offset_top = 420.0
+offset_right = 535.0
+offset_bottom = 490.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(973, 498)
+zoom = Vector2(1.5, 1.5)
+
+[node name="DialogAreaPatient1" parent="." instance=ExtResource("10_wff06")]
+position = Vector2(714, 986)
+script = ExtResource("11_2di6d")
+text_key = "hirayaThree"
+
+[node name="CollisionShape2D" parent="DialogAreaPatient1" index="0"]
+position = Vector2(497, -336)
+shape = SubResource("RectangleShape2D_icbjj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1213, 667)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_8avjv")
+autoplay = "default"
+frame_progress = 0.76189
+
+[node name="0HealingRoom" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(971, 546)
+scale = Vector2(2, 2)
+texture = ExtResource("13_0eawr")
+
+[node name="Back Button" type="Button" parent="."]
+offset_left = 333.0
+offset_top = 346.0
+offset_right = 469.0
+offset_bottom = 418.0
+theme_type_variation = &"FlatButton"
+icon = ExtResource("14_0lg8f")
+script = ExtResource("15_rtxrq")
+
+[connection signal="area_entered" from="DialogAreaPatient1" to="Player" method="_on_dialog_area_area_entered"]
+[connection signal="area_exited" from="DialogAreaPatient1" to="Player" method="_on_dialog_area_area_exited"]
+
+[editable path="Player/DialogPlayer"]
+[editable path="DialogAreaPatient1"]
