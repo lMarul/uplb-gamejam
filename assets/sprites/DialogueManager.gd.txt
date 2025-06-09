@@ -1,0 +1,37 @@
+extends CanvasLayer
+
+@onready var panel      = $Panel
+@onready var text_label = $Panel/Text
+@onready var next_hint  = $Panel/NextHint
+
+var _lines = []
+var _index = 0
+var _active = false
+var _caller = null
+
+func start(lines: Array, caller: Node) -> void:
+    _lines = lines
+    _index = 0
+    _caller = caller
+    _active = true
+    panel.visible = true
+    _show_line()
+
+func _show_line() -> void:
+    text_label.text = _lines[_index]
+    next_hint.text = (_index == _lines.size() - 1) \
+        ? "Press SPACE to finish" : "Press SPACE to continue"
+
+func _end() -> void:
+    panel.visible = false
+    _active = false
+    print("QUEST PLACEHOLDER from %s" % _caller.name)
+
+func _unhandled_input(event: InputEvent) -> void:
+    if !_active: return
+    if event.is_action_pressed("ui_accept"):
+        _index += 1
+        if _index >= _lines.size():
+            _end()
+        else:
+            _show_line()
