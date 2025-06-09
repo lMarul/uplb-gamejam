@@ -32,6 +32,7 @@ script = ExtResource("1_8x3kf")
 metadata/_edit_use_anchors_ = true
 
 [node name="ingredient1" parent="ingredient_list" instance=ExtResource("1_txeo6")]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.775521
@@ -43,6 +44,7 @@ texture = ExtResource("2_ytwy5")
 metadata/_edit_use_anchors_ = true
 
 [node name="ingredient2" parent="ingredient_list" instance=ExtResource("1_txeo6")]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0708333
@@ -57,6 +59,7 @@ ingredient_data = ExtResource("3_lxvwt")
 metadata/_edit_use_anchors_ = true
 
 [node name="ingredient3" parent="ingredient_list" instance=ExtResource("1_txeo6")]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.651562
@@ -73,6 +76,7 @@ ingredient_data = ExtResource("4_01wc5")
 metadata/_edit_use_anchors_ = true
 
 [node name="ingredient4" parent="ingredient_list" instance=ExtResource("1_txeo6")]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.227083
@@ -88,6 +92,7 @@ ingredient_data = ExtResource("8_3gfww")
 metadata/_edit_use_anchors_ = true
 
 [node name="ingredient5" parent="ingredient_list" instance=ExtResource("1_txeo6")]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.638542
@@ -104,6 +109,7 @@ ingredient_data = ExtResource("9_fy5el")
 metadata/_edit_use_anchors_ = true
 
 [node name="ingredient6" parent="ingredient_list" instance=ExtResource("1_txeo6")]
+visible = false
 custom_minimum_size = Vector2(130, 190)
 layout_mode = 1
 anchors_preset = -1
