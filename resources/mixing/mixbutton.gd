@@ -1,15 +1,24 @@
 extends Button
 
 signal start_mix()
-var flag = null
+signal stop_drop()
+var buttonflag = null
+
+
 
 func _pressed():
-	emit_signal("start_mix", flag)
+	var mixbar = get_parent().get_node("MixBar")
+	var poundbar = get_parent().get_node("PoundBar")
+	
+	mixbar.visible = true
+	poundbar.visible = true
+	emit_signal("stop_drop")
+	emit_signal("start_mix", buttonflag)
 
 func _on_mixer_mixing_successful(flag: Variant) -> void:
 	disabled = false
-	flag = true
+	buttonflag = flag
 	
 func _on_mixer_mixing_unsuccessful(flag: Variant) -> void:
 	disabled = false
-	flag = false
+	buttonflag = flag

@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://bbjtce3afnpmv"]
+[gd_scene load_steps=19 format=3 uid="uid://bbjtce3afnpmv"]
 
+[ext_resource type="Script" uid="uid://cawy3mu51wu87" path="res://ingredient_list.gd" id="1_8x3kf"]
 [ext_resource type="PackedScene" uid="uid://btwjfny610ipm" path="res://resources/ingredients/ingredient.tscn" id="1_txeo6"]
 [ext_resource type="Texture2D" uid="uid://dfdm60jp2y07c" path="res://resources/ingredients/Water-64x32-32x32-7x7-20x21.png" id="2_ytwy5"]
 [ext_resource type="Texture2D" uid="uid://bnhq6e3w6t8fg" path="res://resources/potionmaking/TawaTawa.png" id="3_01wc5"]
@@ -7,9 +8,16 @@
 [ext_resource type="Resource" uid="uid://b4qhnvmij3g5s" path="res://resources/ingredients/healing3.tres" id="4_01wc5"]
 [ext_resource type="Texture2D" uid="uid://dnlud3ymwyvnc" path="res://resources/potionmaking/Dew.png" id="5_67bdf"]
 [ext_resource type="PackedScene" uid="uid://cscwbttw746x1" path="res://resources/mixing/mixercontrol.tscn" id="5_ytwy5"]
+[ext_resource type="Texture2D" uid="uid://nayyqyd70avn" path="res://resources/potionmaking/Tamarind.png" id="7_g654v"]
+[ext_resource type="Resource" uid="uid://c5xpcnvl17ve6" path="res://resources/ingredients/healing4.tres" id="8_3gfww"]
+[ext_resource type="Texture2D" uid="uid://udwoesew1my2" path="res://resources/potionmaking/Sarimanok.png" id="8_pv28h"]
 [ext_resource type="Texture2D" uid="uid://biwbm25oxe2h0" path="res://resources/potionmaking/Shelf and Table.png" id="9_fdf1g"]
+[ext_resource type="Resource" uid="uid://lu065hl03m12" path="res://resources/ingredients/healing5.tres" id="9_fy5el"]
 [ext_resource type="Texture2D" uid="uid://bl5ld5lrts5ad" path="res://resources/potionmaking/Bowl.png" id="9_g654v"]
-[ext_resource type="Script" uid="uid://bagd8213sk4xw" path="res://resources/potionmaking/animation/animatedsprite.gd" id="9_pv28h"]
+[ext_resource type="Texture2D" uid="uid://b55wsj8qr3rij" path="res://resources/potionmaking/Ashes.png" id="11_5rjai"]
+[ext_resource type="Resource" uid="uid://wl0sowny1tr6" path="res://resources/spellcasting/MA.tres" id="14_ld7q5"]
+[ext_resource type="Texture2D" uid="uid://c57d4ksqb15s4" path="res://resources/potionmaking/ihain.png" id="15_06m6a"]
+[ext_resource type="Texture2D" uid="uid://c12m5ogtqbj6r" path="res://resources/potionmaking/halo.png" id="16_ld7q5"]
 
 [node name="Potionmixing" type="Node2D"]
 
@@ -20,6 +28,7 @@ anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_filter = 2
+script = ExtResource("1_8x3kf")
 metadata/_edit_use_anchors_ = true
 
 [node name="ingredient1" parent="ingredient_list" instance=ExtResource("1_txeo6")]
@@ -63,10 +72,61 @@ texture = ExtResource("5_67bdf")
 ingredient_data = ExtResource("4_01wc5")
 metadata/_edit_use_anchors_ = true
 
+[node name="ingredient4" parent="ingredient_list" instance=ExtResource("1_txeo6")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.227083
+anchor_top = 0.242593
+anchor_right = 0.227083
+anchor_bottom = 0.242593
+offset_left = -0.00012207
+offset_top = -3.05176e-05
+offset_right = 250.0
+scale = Vector2(1.07789, 1.08419)
+texture = ExtResource("7_g654v")
+ingredient_data = ExtResource("8_3gfww")
+metadata/_edit_use_anchors_ = true
+
+[node name="ingredient5" parent="ingredient_list" instance=ExtResource("1_txeo6")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.638542
+anchor_top = 0.108333
+anchor_right = 0.690625
+anchor_bottom = 0.126852
+offset_left = -0.00012207
+offset_top = -3.05176e-05
+offset_right = 200.0
+offset_bottom = 210.0
+scale = Vector2(1.07789, 1.08419)
+texture = ExtResource("8_pv28h")
+ingredient_data = ExtResource("9_fy5el")
+metadata/_edit_use_anchors_ = true
+
+[node name="ingredient6" parent="ingredient_list" instance=ExtResource("1_txeo6")]
+custom_minimum_size = Vector2(130, 190)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0513109
+anchor_top = 0.419431
+anchor_right = 0.103394
+anchor_bottom = 0.43795
+offset_left = 206.483
+offset_top = 27.0143
+offset_right = 236.483
+offset_bottom = 197.014
+scale = Vector2(1.07789, 1.08419)
+texture = ExtResource("11_5rjai")
+ingredient_data = ExtResource("9_fy5el")
+metadata/_edit_use_anchors_ = true
+
 [node name="mixercontrol" parent="." instance=ExtResource("5_ytwy5")]
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_left = 3.0
+offset_top = -3.0
+offset_right = 1923.0
+offset_bottom = 1077.0
 mouse_filter = 2
+spell = ExtResource("14_ld7q5")
 metadata/_edit_use_anchors_ = true
 
 [node name="mixer" parent="mixercontrol" index="0"]
@@ -86,42 +146,73 @@ stretch_mode = 2
 
 [node name="stirring" parent="mixercontrol" index="1"]
 offset_left = -1158.0
-offset_top = -343.0
-offset_right = -758.0
-offset_bottom = -87.0
+offset_top = -339.0
+offset_right = -658.0
+offset_bottom = -179.0
+
+[node name="MixUp" parent="mixercontrol/stirring" index="0"]
+offset_left = -137.0
+offset_top = -90.0
+offset_right = 23.0
+offset_bottom = 65.0
+
+[node name="MixLeft" parent="mixercontrol/stirring" index="1"]
+offset_left = -57.0
+offset_top = -90.0
+offset_right = 98.0
+offset_bottom = 70.0
+
+[node name="MixRight" parent="mixercontrol/stirring" index="2"]
+offset_left = -212.0
+offset_top = -90.0
+offset_right = -57.0
+offset_bottom = 70.0
 
 [node name="Animatedsprite" parent="mixercontrol/stirring" index="3"]
 position = Vector2(196, 504)
-script = ExtResource("9_pv28h")
 
-[node name="ResultLabel" parent="mixercontrol" index="3"]
+[node name="ResultLabel" parent="mixercontrol" index="2"]
 offset_top = 87.0
 offset_bottom = 110.0
 
-[node name="mixbutton" parent="mixercontrol" index="4"]
-offset_left = 218.0
-offset_top = 827.0
-offset_right = 362.0
-offset_bottom = 971.0
+[node name="mixbutton" parent="mixercontrol" index="3"]
+custom_minimum_size = Vector2(20, 20)
+offset_left = 117.0
+offset_top = 771.0
+offset_right = 253.0
+offset_bottom = 907.0
+scale = Vector2(2, 2)
+text = ""
+icon = ExtResource("16_ld7q5")
+flat = true
 
-[node name="servebutton" parent="mixercontrol" index="5"]
-offset_left = 1602.0
-offset_top = 838.0
-offset_right = 1746.0
-offset_bottom = 982.0
+[node name="servebutton" parent="mixercontrol" index="4"]
+custom_minimum_size = Vector2(108, 115)
+offset_left = 1574.0
+offset_top = 781.0
+offset_right = 1690.0
+offset_bottom = 904.0
+scale = Vector2(2, 2)
+text = ""
+icon = ExtResource("15_06m6a")
+flat = true
 
-[node name="MixBar" parent="mixercontrol" index="6"]
-offset_left = 1464.09
-offset_top = 782.014
-offset_right = 1664.09
-offset_bottom = 812.014
+[node name="MixBar" parent="mixercontrol" index="5"]
+offset_left = 762.0
+offset_top = 283.0
+offset_right = 1162.0
+offset_bottom = 343.0
+rotation = 0.0
+show_percentage = true
 
-[node name="PoundBar" parent="mixercontrol" index="7"]
+[node name="PoundBar" parent="mixercontrol" index="6"]
 custom_minimum_size = Vector2(200, 30)
-offset_left = 1498.09
-offset_top = 782.014
-offset_right = 1698.09
-offset_bottom = 812.014
+offset_left = 762.0
+offset_top = 369.0
+offset_right = 1162.0
+offset_bottom = 429.0
+rotation = 0.0
+show_percentage = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -134,15 +225,17 @@ texture = ExtResource("9_fdf1g")
 
 [connection signal="ingredient_to_null_to_slot" from="mixercontrol" to="ingredient_list" method="_on_mixercontrol_ingredient_to_null_to_slot"]
 [connection signal="mixleft_pressed" from="mixercontrol/stirring" to="mixercontrol" method="_on_stirring_mixleft_pressed"]
-[connection signal="mixleft_pressed" from="mixercontrol/stirring" to="mixercontrol/stirring/Animatedsprite" method="_on_stirring_mixleft_pressed"]
 [connection signal="mixright_pressed" from="mixercontrol/stirring" to="mixercontrol" method="_on_stirring_mixright_pressed"]
-[connection signal="mixright_pressed" from="mixercontrol/stirring" to="mixercontrol/stirring/Animatedsprite" method="_on_stirring_mixright_pressed"]
 [connection signal="mixup_pressed" from="mixercontrol/stirring" to="mixercontrol" method="_on_stirring_mixup_pressed"]
-[connection signal="mixup_pressed" from="mixercontrol/stirring" to="mixercontrol/stirring/Animatedsprite" method="_on_stirring_mixup_pressed"]
+[connection signal="stop_drop" from="mixercontrol/mixbutton" to="ingredient_list" method="_on_mixbutton_stop_drop"]
+[connection signal="spellcasting_time" from="mixercontrol/servebutton" to="mixercontrol/SpellCasting" method="_on_servebutton_spellcasting_time"]
 
 [editable path="ingredient_list/ingredient1"]
 [editable path="ingredient_list/ingredient2"]
 [editable path="ingredient_list/ingredient3"]
+[editable path="ingredient_list/ingredient4"]
+[editable path="ingredient_list/ingredient5"]
+[editable path="ingredient_list/ingredient6"]
 [editable path="mixercontrol"]
 [editable path="mixercontrol/mixer"]
 [editable path="mixercontrol/stirring"]

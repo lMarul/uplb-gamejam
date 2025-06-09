@@ -9,4 +9,5 @@ func _get_drag_data(_pos: Vector2) -> Variant:
 	c.add_child(preview)
 	preview.position = Vector2.ZERO - _pos
 	set_drag_preview(c)
+	add_to_group("invisible_ingredients")
 	return ingredient_data

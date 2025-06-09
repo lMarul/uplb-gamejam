@@ -1,56 +1,63 @@
-[gd_scene load_steps=4 format=3 uid="uid://ct7ujtcypcufs"]
+[gd_scene load_steps=6 format=3 uid="uid://ct7ujtcypcufs"]
 
 [ext_resource type="Script" uid="uid://bimoghan7id3s" path="res://resources/stirring/stirring.gd" id="1_jry5k"]
-[ext_resource type="Texture2D" uid="uid://b7sf4cmiowegi" path="res://icon.svg" id="1_n4upx"]
+[ext_resource type="Texture2D" uid="uid://cefvul3bi8xqc" path="res://resources/potionmaking/ArrowUp.png" id="2_xru1e"]
+[ext_resource type="Texture2D" uid="uid://04rpsjxmn1fu" path="res://resources/potionmaking/ArrowLeft.png" id="3_p7pqj"]
 [ext_resource type="PackedScene" uid="uid://004ysxc1gr8b" path="res://resources/potionmaking/animation/animatedsprite.tscn" id="3_yqgmy"]
+[ext_resource type="Texture2D" uid="uid://drku1ublhyf6w" path="res://resources/potionmaking/ArrowRight.png" id="4_xru1e"]
 
 [node name="stirring" type="Control"]
-custom_minimum_size = Vector2(400, 256)
+custom_minimum_size = Vector2(500, 160)
 layout_mode = 3
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -325.0
-offset_right = 40.0
-offset_bottom = -285.0
+offset_top = -540.0
+offset_right = 500.0
+offset_bottom = -380.0
 grow_vertical = 2
 script = ExtResource("1_jry5k")
 
 [node name="MixUp" type="TextureRect" parent="."]
+visible = false
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -64.0
-offset_right = 64.0
-offset_bottom = 128.0
+offset_left = -80.0
+offset_right = 80.0
+offset_bottom = 155.0
 grow_horizontal = 2
-texture = ExtResource("1_n4upx")
+texture = ExtResource("2_xru1e")
 
 [node name="MixLeft" type="TextureRect" parent="."]
+visible = false
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -128.0
-offset_right = 128.0
-grow_vertical = 0
-texture = ExtResource("1_n4upx")
+offset_right = 155.0
+offset_bottom = 160.0
+texture = ExtResource("3_p7pqj")
 
 [node name="MixRight" type="TextureRect" parent="."]
+visible = false
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 1
-anchors_preset = 3
+anchors_preset = 1
 anchor_left = 1.0
-anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -128.0
-offset_top = -128.0
+offset_left = -155.0
+offset_bottom = 160.0
 grow_horizontal = 0
-grow_vertical = 0
-texture = ExtResource("1_n4upx")
+texture = ExtResource("4_xru1e")
 
 [node name="Animatedsprite" parent="." instance=ExtResource("3_yqgmy")]
+visible = false
+
+[connection signal="mixanim" from="." to="Animatedsprite" method="_on_stirring_mixanim"]
+[connection signal="mixleft_pressed" from="." to="Animatedsprite" method="_on_stirring_mixleft_pressed"]
+[connection signal="mixleft_released" from="." to="Animatedsprite" method="_on_stirring_mixleft_released"]
+[connection signal="mixright_pressed" from="." to="Animatedsprite" method="_on_stirring_mixright_pressed"]
+[connection signal="mixright_released" from="." to="Animatedsprite" method="_on_stirring_mixright_released"]
+[connection signal="mixup_pressed" from="." to="Animatedsprite" method="_on_stirring_mixup_pressed"]
+[connection signal="mixup_released" from="." to="Animatedsprite" method="_on_stirring_mixup_released"]

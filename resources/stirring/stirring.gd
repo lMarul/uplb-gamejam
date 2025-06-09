@@ -1,14 +1,18 @@
 extends Control
 
 signal mixup_pressed()
+signal mixup_released()
+
 signal mixright_pressed()
+signal mixright_released()
+
 signal mixleft_pressed()
+signal mixleft_released()
+
+signal mixanim()
 var flag = null
 
 func _ready():
-	$MixUp.visible = false
-	$MixRight.visible = false
-	$MixLeft.visible = false
 	set_process(false)
 
 func _process(delta):
@@ -36,7 +40,9 @@ func _process(delta):
 
 func _on_mixbutton_start_mix(mix_flag: Variant) -> void:
 	flag = mix_flag
+	$Animatedsprite.visible = true
 	$MixUp.visible = true
 	$MixRight.visible = true
 	$MixLeft.visible = true
+	emit_signal("mixanim")
 	set_process(true)

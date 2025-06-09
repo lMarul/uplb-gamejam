@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://cscwbttw746x1"]
+[gd_scene load_steps=10 format=3 uid="uid://cscwbttw746x1"]
 
 [ext_resource type="Script" uid="uid://nvktkll2sfwe" path="res://potionmixing.gd" id="1_hsbcm"]
 [ext_resource type="PackedScene" uid="uid://bb75yjfiuehmq" path="res://resources/mixing/mixer.tscn" id="2_of3wd"]
 [ext_resource type="PackedScene" uid="uid://ct7ujtcypcufs" path="res://resources/stirring/stirring.tscn" id="3_of3wd"]
 [ext_resource type="Script" uid="uid://n68ld6uq0bcm" path="res://resources/mixing/mixbutton.gd" id="4_m8u8p"]
+[ext_resource type="Script" uid="uid://die5fxke6g3df" path="res://resources/mixing/servebutton.gd" id="5_e4cl7"]
+[ext_resource type="PackedScene" uid="uid://d1e6nbu1m7pk2" path="res://resources/spellcasting/scene.tscn" id="6_e8g8p"]
+[ext_resource type="AudioStream" uid="uid://b5dm3xnkjfthd" path="res://music/Iterate OST - Cooking Intensity 1.mp3" id="6_sqh00"]
+[ext_resource type="AudioStream" uid="uid://bd0i5nflmos3m" path="res://music/Iterate OST - Cooking Intensity 2.mp3" id="7_e8g8p"]
+[ext_resource type="AudioStream" uid="uid://biq1iwy0285ee" path="res://music/Iterate OST - Cooking Intensity 3.mp3" id="8_vre7t"]
 
 [node name="mixercontrol" type="Control"]
 custom_minimum_size = Vector2(600, 256)
@@ -36,9 +41,6 @@ offset_bottom = 128.0
 grow_horizontal = 0
 mouse_filter = 2
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-volume_db = -20.0
-
 [node name="ResultLabel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 10
@@ -61,8 +63,10 @@ offset_right = 51.0
 offset_bottom = 31.0
 disabled = true
 text = "Serve"
+script = ExtResource("5_e4cl7")
 
 [node name="MixBar" type="ProgressBar" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 4.0
 offset_bottom = 27.0
@@ -71,6 +75,7 @@ fill_mode = 1
 show_percentage = false
 
 [node name="PoundBar" type="ProgressBar" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 4.0
 offset_bottom = 27.0
@@ -78,7 +83,27 @@ rotation = 1.57126
 fill_mode = 1
 show_percentage = false
 
-[connection signal="stirringready" from="." to="stirring" method="_on_mixercontrol_stirringready"]
+[node name="SpellCasting" parent="." instance=ExtResource("6_e8g8p")]
+position = Vector2(799, 431)
+
+[node name="ingredient_drop" type="AudioStreamPlayer" parent="."]
+volume_db = -20.0
+
+[node name="intensity_1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_sqh00")
+volume_db = -20.0
+parameters/looping = true
+
+[node name="intensity_2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_e8g8p")
+volume_db = -20.0
+parameters/looping = true
+
+[node name="intensity_3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_vre7t")
+volume_db = -20.0
+parameters/looping = true
+
 [connection signal="ingredient_dropped" from="mixer" to="." method="_on_mixer_ingredient_dropped"]
 [connection signal="ingredient_to_null" from="mixer" to="." method="_on_mixer_ingredient_to_null"]
 [connection signal="mixing_successful" from="mixer" to="mixbutton" method="_on_mixer_mixing_successful"]
