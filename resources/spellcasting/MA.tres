@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SpellData" load_steps=3 format=3 uid="uid://wl0sowny1tr6"]
+
+[ext_resource type="Script" uid="uid://bruvrurg8ck8g" path="res://resources/spellcasting/QTEResource.gd" id="1_fk4yn"]
+[ext_resource type="Texture2D" uid="uid://dv4md5cd7yx3y" path="res://resources/spellcasting/imgs/ma.png" id="1_m1pdm"]
+
+[resource]
+script = ExtResource("1_fk4yn")
+name = "MA"
+spelling = ["M", "A"]
+icon = ExtResource("1_m1pdm")
+mix_req = 100.0
+pound_req = 0.0
