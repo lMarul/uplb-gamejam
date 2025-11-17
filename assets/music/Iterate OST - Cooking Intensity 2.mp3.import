@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bd0i5nflmos3m"
+path="res://.godot/imported/Iterate OST - Cooking Intensity 2.mp3-0393fd719ec685c98e0f541f3575f260.mp3str"
+
+[deps]
+
+source_file="res://music/Iterate OST - Cooking Intensity 2.mp3"
+dest_files=["res://.godot/imported/Iterate OST - Cooking Intensity 2.mp3-0393fd719ec685c98e0f541f3575f260.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

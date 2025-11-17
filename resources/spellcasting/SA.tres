@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SpellData" load_steps=3 format=3 uid="uid://bvifxf64q08ja"]
+
+[ext_resource type="Script" uid="uid://bruvrurg8ck8g" path="res://resources/spellcasting/QTEResource.gd" id="1_4t0h4"]
+[ext_resource type="Texture2D" uid="uid://bn746t4kmw07l" path="res://resources/spellcasting/imgs/sa.png" id="1_wkvyt"]
+
+[resource]
+script = ExtResource("1_4t0h4")
+name = "Fire"
+letter = ["S", "A"]
+icon = ExtResource("1_wkvyt")

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="SpellData" load_steps=2 format=3 uid="uid://dwkgbs5tu3qkv"]
+
+[ext_resource type="Script" uid="uid://bruvrurg8ck8g" path="res://resources/spellcasting/QTEResource.gd" id="1_dqund"]
+
+[resource]
+script = ExtResource("1_dqund")
+name = "SA"
+letter = ["Y", "A"]

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1e6nbu1m7pk2"]
+
+[ext_resource type="Script" uid="uid://tnl0lh3tl8pv" path="res://resources/spellcasting/testing.gd" id="1_jsda3"]
+[ext_resource type="Resource" uid="uid://wl0sowny1tr6" path="res://resources/spellcasting/MA.tres" id="2_ttpgt"]
+
+[node name="SpellCasting" type="Node2D"]
+script = ExtResource("1_jsda3")
+spelling_data = ExtResource("2_ttpgt")

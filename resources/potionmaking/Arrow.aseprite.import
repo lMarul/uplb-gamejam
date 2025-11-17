@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://d3mecue6jqbql"
+path="res://.godot/imported/Arrow.aseprite-a6ba9f6434209b7593f68b619c03b394.res"
+
+[deps]
+
+source_file="res://resources/potionmaking/Arrow.aseprite"
+dest_files=["res://.godot/imported/Arrow.aseprite-a6ba9f6434209b7593f68b619c03b394.res"]
+
+[params]
+
